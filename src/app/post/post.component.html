@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="card">
+        <div class="post-card">
+            <label>ENTER POST</label>
+            <form [formGroup]="postForm">
+                <input type="text" formControlName="postArea" placeholder="write a post ........">
+                <button (click)="uploadPost()">Submit</button>
+            </form>
+        </div>
+
+
+        <div *ngFor="let post of inputPostArr; let i= index" class="like-card">
+            <p>{{i+1}}.{{post.postDesc}}</p>
+            <div class="like-box">
+                <img class="thumb" src="assets/images/vote.png" alt="vote icon" (click)="vote(i, post.id)">
+                <div *ngIf="post.counter!=0"> {{post.counter}} </div>
+            </div>
+        </div>
+    </div>
+</div>

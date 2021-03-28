@@ -1,0 +1,27 @@
+
+.container{
+    position: relative;
+    width: 35%;
+    margin: auto;
+}
+.card{
+    margin: auto;
+}
+.post-card{
+    display: flex;
+}
+.post-card label, .post-card input , .post-card button{
+    margin: 7px;
+    padding: 5px;
+}
+.like-card{
+    margin: 5px;
+}
+.like-box{
+    display: flex;
+}
+.thumb{
+    width: 15px;
+    height: 15px;
+    margin:0px 5px 0px 0px;
+}
