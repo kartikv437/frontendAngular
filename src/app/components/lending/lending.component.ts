@@ -11,6 +11,7 @@ export class LendingComponent implements OnInit {
   countryList:string[]=[
     'India',
     'USA',
+    'Germany'
   ];
   durationList:string[]=[
     '1 week',
