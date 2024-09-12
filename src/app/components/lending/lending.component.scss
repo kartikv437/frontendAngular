@@ -1,0 +1,180 @@
+.form_container {
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+
+    .container_body {
+        border-radius: 10px;
+        padding: 10px;
+        width: 60vw;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6em;
+
+        .bar_counter {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+    }
+
+    .lower_body {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        .form_body {
+            .country_section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .country_field {
+                    width: 50%;
+                }
+            }
+
+            .course_title {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5em;
+
+                .course_package {
+                    font-size: 30px;
+                }
+
+                .course_program {
+                    font-size: 20px;
+                }
+            }
+
+            .date_section {
+                .mat-form-field-infix {
+                    display: flex;
+                    align-items: center;
+                }
+
+            }
+        }
+
+        .action_section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .action_one{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2em;
+                margin-top: 20px;
+            }
+            .action_second{
+
+            }
+        }
+    }
+}
+
+::ng-deep .mat-form-field-infix {
+    display: flex !important;
+    align-items: center;
+}
+
+::ng-deep .mat-form-field-flex {
+    height: 65px;
+}
+
+.image_section {
+    display: flex;
+    gap: 1em;
+    margin-top: 20px;
+
+    .image_container {
+        cursor: pointer;
+    }
+
+    .image_size {
+        width: 18vw;
+        height: 22vh;
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .image1_bottom {
+        background: #24086b;
+        color: white;
+        border-radius: 0px 0px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .bottom_head {}
+
+        .bottom_course {
+            font-size: 20px;
+        }
+    }
+
+    .image2_bottom {
+        background: #d6083b;
+        color: white;
+        border-radius: 0px 0px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .bottom_head {}
+
+        .bottom_course {
+            font-size: 20px;
+        }
+    }
+
+    .image3_bottom {
+        background: #00a4d9;
+        color: white;
+        border-radius: 0px 0px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .bottom_head {}
+
+        .bottom_course {
+            font-size: 20px;
+        }
+    }
+}
+
+.duration_section {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.table_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table, th , td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }

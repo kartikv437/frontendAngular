@@ -1,0 +1,140 @@
+<div class="form_container">
+    <div class="container_body">
+        <div>
+            <div class="bar_counter">{{barwidth === 25?'1/4':barwidth === 50?'2/4':barwidth === 75?'3/4':'4/4'}}</div>
+            <div class="progress">
+                <div class="progress-bar" [style.width]="barwidth + '%'"></div>
+            </div>
+        </div>
+
+        <div class="lower_body">
+            <div class="form_body">
+                <!-- Step -1 -->
+                <div *ngIf="barwidth === 25">
+                    <div class="country_section">
+                        <mat-form-field class="country_field" appearance="outline">
+                            <mat-label>Select a Country</mat-label>
+                            <mat-select [(ngModel)]="selectedCountry">
+                                <mat-option value="" disabled="">Please Select</mat-option>
+                                <mat-option [value]="item" *ngFor="let item of countryList; let i=index">
+                                    {{item}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <!-- Step-2 -->
+                <div *ngIf="barwidth === 50">
+                    <div class="course_title">
+                        <span class="course_package">Build your package</span>
+                        <div class="course_program">Choose your program:</div>
+                    </div>
+
+                    <div class="image_section">
+
+                        <div class="image_container" (click)="next('English courses')">
+                            <img src="../../../assets/images/study1.jpeg" alt="Big Ben" class="image_size" />
+                            <div class="p-2 image1_bottom">
+                                <h3 class="bottom_head">Students 16+</h3>
+                                <p class="bottom_course">English courses</p>
+                            </div>
+                        </div>
+                        <div class="image_container" (click)="next('German & French courses')">
+                            <img src="../../../assets/images/study2.jpeg" alt="German and French courses"
+                                class="image_size" />
+                            <div class="p-2 image2_bottom">
+                                <h3 class="bottom_head">Students 16+</h3>
+                                <p class="bottom_course">German & French courses</p>
+                            </div>
+                        </div>
+                        <div class="image_container" (click)="next('Language camps')">
+                            <img src="../../../assets/images/study3.jpeg" alt="Language camps" class="image_size" />
+                            <div class="p-2 image3_bottom">
+                                <h3 class="bottom_head">Kids & Teens</h3>
+                                <p class="bottom_course">Language camps</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step-3 -->
+                <div *ngIf="barwidth === 75">
+                    <div class="duration_section">
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Duration</mat-label>
+                                <mat-select [(ngModel)]="selectedDuration">
+                                    <mat-option value="" disabled="">Please Select</mat-option>
+                                    <mat-option [value]="item" *ngFor="let item of durationList; let i=index">
+                                        {{item}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="date_section">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Start Date</mat-label>
+                                <input matInput [matDatepicker]="picker1" [(ngModel)]="startDate">
+                                <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>End Date</mat-label>
+                                <input matInput [matDatepicker]="picker2" [(ngModel)]="endDate">
+                                <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                                <mat-datepicker #picker2></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Step-4 -->
+                <div *ngIf="barwidth === 100">
+                    <div class="table_container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Country</th>
+                                    <th>Course</th>
+                                    <th>Duration</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{selectedCountry}}</td>
+                                    <td>{{selectedCourse}}</td>
+                                    <td>{{selectedDuration}}</td>
+                                    <td>{{startDate | date : 'dd/MM/YYYY hh:mm a'}}</td>
+                                    <td>{{endDate | date : 'dd/MM/YYYY hh:mm a'}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Section -->
+            <div class="action_section" >
+                <div class="action_one" *ngIf="barwidth != 50">
+                    <button type="submit"  mat-flat-button color="primary" [disabled]="!selectedCountry" *ngIf="barwidth === 25" (click)="next()" >LET'S GET
+                        STARTED</button>
+                        <button type="submit" mat-raised-button *ngIf="barwidth === 75" (click)="previous()"
+                        ><mat-icon>arrow_back_ios</mat-icon>&nbsp;BACK</button>
+                    <button type="submit"  mat-flat-button color="primary" *ngIf="barwidth <100 && barwidth !=25 && barwidth !=75" (click)="next()"
+                        >NEXT&nbsp;<mat-icon>arrow_forward_ios</mat-icon></button>
+    
+                    <button type="submit"  mat-flat-button color="primary" *ngIf="barwidth === 75" [disabled]="!selectedDuration && !startDate && !endDate" (click)="next()" >Submit</button>
+                </div>
+                <div class="action_second">
+                    <button type="submit" mat-raised-button *ngIf="barwidth === 50 || barwidth === 100" (click)="previous()"
+                        ><mat-icon>arrow_back_ios</mat-icon>&nbsp;BACK</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
