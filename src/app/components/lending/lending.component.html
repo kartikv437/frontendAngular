@@ -1,5 +1,8 @@
 <div class="form_container">
     <div class="container_body">
+        <div class="container_title">
+            <h1>GEDU SERVICES</h1>
+        </div>
         <div>
             <div class="bar_counter">{{barwidth === 25?'1/4':barwidth === 50?'2/4':barwidth === 75?'3/4':'4/4'}}</div>
             <div class="progress">
@@ -34,14 +37,14 @@
                     <div class="image_section">
 
                         <div class="image_container" (click)="next('English courses')">
-                            <img src="../../../assets/images/study1.jpeg" alt="Big Ben" class="image_size" />
+                            <img src="assets/images/study1.jpeg" alt="Big Ben" class="image_size" />
                             <div class="p-2 image1_bottom">
                                 <h3 class="bottom_head">Students 16+</h3>
                                 <p class="bottom_course">English courses</p>
                             </div>
                         </div>
                         <div class="image_container" (click)="next('German & French courses')">
-                            <img src="../../../assets/images/study2.jpeg" alt="German and French courses"
+                            <img src="assets/images/study2.jpeg" alt="German and French courses"
                                 class="image_size" />
                             <div class="p-2 image2_bottom">
                                 <h3 class="bottom_head">Students 16+</h3>
@@ -49,7 +52,7 @@
                             </div>
                         </div>
                         <div class="image_container" (click)="next('Language camps')">
-                            <img src="../../../assets/images/study3.jpeg" alt="Language camps" class="image_size" />
+                            <img src="assets/images/study3.jpeg" alt="Language camps" class="image_size" />
                             <div class="p-2 image3_bottom">
                                 <h3 class="bottom_head">Kids & Teens</h3>
                                 <p class="bottom_course">Language camps</p>
@@ -120,17 +123,17 @@
             <!-- Action Section -->
             <div class="action_section" >
                 <div class="action_one" *ngIf="barwidth != 50">
-                    <button type="submit"  mat-flat-button color="primary" [disabled]="!selectedCountry" *ngIf="barwidth === 25" (click)="next()" >LET'S GET
+                    <button type="submit" class="get_start"  mat-flat-button color="primary" [disabled]="!selectedCountry" *ngIf="barwidth === 25" (click)="next()" >LET'S GET
                         STARTED</button>
-                        <button type="submit" mat-raised-button *ngIf="barwidth === 75" (click)="previous()"
+                        <button type="submit" class="back_one" mat-raised-button *ngIf="barwidth === 75" (click)="previous()"
                         ><mat-icon>arrow_back_ios</mat-icon>&nbsp;BACK</button>
                     <button type="submit"  mat-flat-button color="primary" *ngIf="barwidth <100 && barwidth !=25 && barwidth !=75" (click)="next()"
                         >NEXT&nbsp;<mat-icon>arrow_forward_ios</mat-icon></button>
     
-                    <button type="submit"  mat-flat-button color="primary" *ngIf="barwidth === 75" [disabled]="!selectedDuration && !startDate && !endDate" (click)="next()" >Submit</button>
+                    <button type="submit" class="submit_one"  mat-flat-button color="primary" *ngIf="barwidth === 75" [disabled]="!selectedDuration || !startDate || !endDate" (click)="next()" >Submit</button>
                 </div>
                 <div class="action_second">
-                    <button type="submit" mat-raised-button *ngIf="barwidth === 50 || barwidth === 100" (click)="previous()"
+                    <button type="submit" class="second_back" mat-raised-button *ngIf="barwidth === 50 || barwidth === 100" (click)="previous()"
                         ><mat-icon>arrow_back_ios</mat-icon>&nbsp;BACK</button>
                 </div>
             </div>

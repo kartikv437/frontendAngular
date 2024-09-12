@@ -1,18 +1,26 @@
 .form_container {
     display: flex;
     justify-content: center;
-    padding: 5rem;
+    padding: 2rem;
 
     .container_body {
         border-radius: 10px;
         padding: 10px;
-        width: 60vw;
-        height: 80vh;
+        width: 65vw;
+        height: 90vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 6em;
-
+        gap: 2em;
+        border: 1px solid lightgray;
+        background-image: url("../../../assets/images/back.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        .container_title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .bar_counter {
             display: flex;
             justify-content: end;
@@ -71,9 +79,24 @@
                 align-items: center;
                 gap: 2em;
                 margin-top: 20px;
+                .get_start{
+                    width :20rem;
+                    border-radius: 15px;
+                }
+                .back_one{
+                    width: 15rem;
+                    border-radius: 15px;
+                }
+                .submit_one{
+                    width: 15rem;
+                    border-radius: 15px;
+                }
             }
             .action_second{
-
+                .second_back{
+                    width: 20rem;
+                    border-radius: 15px;
+                }
             }
         }
     }
